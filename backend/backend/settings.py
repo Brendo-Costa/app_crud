@@ -22,10 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-3)uz_hs!yvd+c0_20b3*qb97farbsqviz(qze1u)*bm%c+&_l+'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on in production! (Deve ser "False" em PRODUÇÃO)
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# QUAIS DOMÍNIOS/IP'S PODEM ACESSAR A SUA APLICAÇÃO DJANGO, NO EXEMPLO, ESTÁ O IP DO SERVIDOR.
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,3 +124,21 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# settings.py no diretório de testes
+REST_FRAMEWORK = {
+    'TEST_REQUEST_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.MultiPartRenderer',
+    ),
+}
+
+
+# settings.py
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.MultiPartRenderer',
+    ),
+}
