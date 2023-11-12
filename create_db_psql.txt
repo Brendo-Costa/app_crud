@@ -1,0 +1,15 @@
+sudo -u postgres psql
+
+postgres=# create role "usuario_db" with login superuser createdb createrole password 'senha_usuario_db';
+CREATE ROLE
+postgres=# create database api_db with owner "usuario_db";
+CREATE DATABASE
+postgres=# grant all privileges on database projeto_agenda to usuario_agenda;
+GRANT
+postgres=# \q
+
+sudo systemctl restart postgresql
+
+usuario_api = usuario
+capacete1040. = senha
+db_api = database
