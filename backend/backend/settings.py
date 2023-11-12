@@ -147,3 +147,4 @@ REST_FRAMEWORK = {
 try:
     from backend.backend.local_settings import *
 except ImportError:
+    ...
