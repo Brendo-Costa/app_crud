@@ -19,14 +19,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+""" # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-3)uz_hs!yvd+c0_20b3*qb97farbsqviz(qze1u)*bm%c+&_l+'
 
 # SECURITY WARNING: don't run with debug turned on in production! (Deve ser "False" em PRODUÇÃO)
 DEBUG = True
 
 # QUAIS DOMÍNIOS/IP'S PODEM ACESSAR A SUA APLICAÇÃO DJANGO, NO EXEMPLO, ESTÁ O IP DO SERVIDOR.
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] """
 
 
 # Application definition
@@ -73,7 +73,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
-# Database
+""" # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+} """
 
 
 # Password validation
@@ -142,3 +142,8 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.MultiPartRenderer',
     ),
 }
+
+
+try:
+    from backend.backend.local_settings import *
+except ImportError:
